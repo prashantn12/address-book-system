@@ -69,6 +69,8 @@ public class AddressBookMain {
                 default:
                     System.out.println("Invalid option, please try again.");
                     break;
+
+                    
             }
         }
 
