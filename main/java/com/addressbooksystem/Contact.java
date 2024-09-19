@@ -35,3 +35,26 @@ class Contact {
         System.out.println("Email: " + email);
     }
 }
+
+class AddressBook {
+    private Contact[] contacts;
+    private int contactCount;
+    private final int MAX_CONTACTS = 100;
+
+    // Constructor for AddressBook
+    public AddressBook() {
+        contacts = new Contact[MAX_CONTACTS];
+        contactCount = 0;
+    }
+
+    // UC1 & UC2: Add new contact to the address book
+    public void addContact(Contact contact) {
+        if (contactCount < MAX_CONTACTS) {
+            contacts[contactCount] = contact;
+            contactCount++;
+            System.out.println("Contact added successfully!");
+        } else {
+            System.out.println("Address book is full.");
+        }
+    }
+}
