@@ -97,4 +97,16 @@ class AddressBook {
         System.out.println("Contact not found.");
 
     }
+
+    // UC5: Display all contacts in the address book
+    public void displayContacts() {
+        if (contactCount == 0) {
+            System.out.println("No contacts available.");
+        } else {
+            for (int i = 0; i < contactCount; i++) {
+                System.out.println("\nContact " + (i + 1) + ":");
+                contacts[i].displayContact();
+            }
+        }
+    }
 }
