@@ -12,10 +12,8 @@ public class AddressBookMain {
         while (running) {
             System.out.println("\nAddress Book Menu:");
             System.out.println("1. Add a new contact");
-            System.out.println("2. Display all contacts");
-            System.out.println("3. Edit a contact");
-            System.out.println("4. Delete a contact");
-            System.out.println("5. Exit");
+            System.out.println("2. Edit a contact");
+
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();  // Consume newline
@@ -44,7 +42,14 @@ public class AddressBookMain {
                     addressBook.addContact(newContact);
                     break;
 
-
+                case 3:
+                    // UC3: Edit a contact
+                    System.out.println("Enter the First Name of the contact to edit: ");
+                    String editFirstName = scanner.nextLine();
+                    System.out.println("Enter the Last Name of the contact to edit: ");
+                    String editLastName = scanner.nextLine();
+                    addressBook.editContact(editFirstName, editLastName, scanner);
+                    break;
 
                 default:
                     System.out.println("Invalid option, please try again.");

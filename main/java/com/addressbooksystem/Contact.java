@@ -57,4 +57,29 @@ class AddressBook {
             System.out.println("Address book is full.");
         }
     }
+
+
+    // UC3: Edit existing contact by name
+    public void editContact(String firstName, String lastName, Scanner scanner) {
+        for (int i = 0; i < contactCount; i++) {
+            if (contacts[i].firstName.equalsIgnoreCase(firstName) && contacts[i].lastName.equalsIgnoreCase(lastName)) {
+                System.out.println("Enter new address: ");
+                contacts[i].address = scanner.nextLine();
+                System.out.println("Enter new city: ");
+                contacts[i].city = scanner.nextLine();
+                System.out.println("Enter new state: ");
+                contacts[i].state = scanner.nextLine();
+                System.out.println("Enter new zip: ");
+                contacts[i].zip = scanner.nextLine();
+                System.out.println("Enter new phone number: ");
+                contacts[i].phoneNumber = scanner.nextLine();
+                System.out.println("Enter new email: ");
+                contacts[i].email = scanner.nextLine();
+                System.out.println("Contact updated successfully!");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
 }
+
