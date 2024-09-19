@@ -13,6 +13,7 @@ public class AddressBookMain {
             System.out.println("\nAddress Book Menu:");
             System.out.println("1. Add a new contact");
             System.out.println("2. Edit a contact");
+            System.out.println("3. Delete a contact");
 
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
@@ -49,6 +50,15 @@ public class AddressBookMain {
                     System.out.println("Enter the Last Name of the contact to edit: ");
                     String editLastName = scanner.nextLine();
                     addressBook.editContact(editFirstName, editLastName, scanner);
+                    break;
+
+                case 4:
+                    // UC4: Delete a contact
+                    System.out.println("Enter the First Name of the contact to delete: ");
+                    String deleteFirstName = scanner.nextLine();
+                    System.out.println("Enter the Last Name of the contact to delete: ");
+                    String deleteLastName = scanner.nextLine();
+                    addressBook.deleteContact(deleteFirstName, deleteLastName);
                     break;
 
                 default:

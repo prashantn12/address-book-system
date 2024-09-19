@@ -81,5 +81,20 @@ class AddressBook {
         }
         System.out.println("Contact not found.");
     }
-}
 
+    // UC4: Delete a contact by name
+    public void deleteContact(String firstName, String lastName) {
+        for (int i = 0; i < contactCount; i++) {
+            if (contacts[i].firstName.equalsIgnoreCase(firstName) && contacts[i].lastName.equalsIgnoreCase(lastName)) {
+                for (int j = i; j < contactCount - 1; j++) {
+                    contacts[j] = contacts[j + 1];  // Shift contacts to fill the gap
+                }
+                contacts[--contactCount] = null;
+                System.out.println("Contact deleted successfully!");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+
+    }
+}
